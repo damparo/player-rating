@@ -1,53 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Player Rating</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
 
-
-
-    <link rel="stylesheet" href="stylesheets.css">
-
-
-
-
-</head>
-<body>
+    <link rel="stylesheet" href="stylesheets.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-dark bg-success justify-content-center">
-        <a class="navbar-brand" href="#">PLAYER GRADE</a>
-       
-        
-      </nav>
+      <a class="navbar-brand" href="#">PLAYER GRADE</a>
+    </nav>
 
     <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn" id="create">Create</button>
+          <button type="button" class="btn" id="view">View</button>
+        </div>
+      </div>
 
-        <div class="row d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn" id="create">Create</button>
-                <button type="button" class="btn" id="view">View</button>
-                
+      <div class="row">
+        <div class="col-sm-8" id="playerform">
+          <div class="card border-secondary mb-3">
+            <div class="card-header">NEW PLAYER</div>
+            <div class="card-body text-dark">
+              <div class="mb-3 row">
+                <label for="inputName" class="col-auto col-form-label"
+                  >Name:</label
+                >
+                <div class="col-auto">
+                  <input
+                    type="playerName"
+                    class="form-control"
+                    id="playerName"
+                    placeholder="Player Name"
+                  />
+                </div>
               </div>
+
+              <div class="mb-3 row">
+
+                  <label for="inputBallcontrol" class="col-6 col-form-label"
+                    >Ball Control:</label
+                  >
+                  <div class="col-2">
+                    <input
+                      type="ballcontrol"
+                      class="form-control"
+                      id="inputBallcontrol"
+                      placeholder="score"
+                    />
+                  </div>
+
+              </div>
+
+              <div class="mb-3 row">
+
+                <label for="inputBallcontrol" class="col-6 col-form-label"
+                  >Ball Control:</label
+                >
+                <div class="col-2">
+                  <input
+                    type="ballcontrol"
+                    class="form-control"
+                    id="inputBallcontrol"
+                    placeholder="score"
+                  />
+                </div>
+
+            </div>
+
+            <div class="mb-3 row">
+
+                <label for="inputBallcontrol" class="col-6 col-form-label"
+                  >Ball Control:</label
+                >
+                <div class="col-2">
+                  <input
+                    type="ballcontrol"
+                    class="form-control"
+                    id="inputBallcontrol"
+                    placeholder="score"
+                  />
+                </div>
+
+            </div>
+
+            <div class="mb-3 row">
+
+                <label for="inputBallcontrol" class="col-6 col-form-label"
+                  >Ball Control:</label
+                >
+                <div class="col-2">
+                  <input
+                    type="ballcontrol"
+                    class="form-control"
+                    id="inputBallcontrol"
+                    placeholder="score"
+                  />
+                </div>
+
+            </div>
+            <div class="mb-3 row">
+
+                <label for="inputBallcontrol" class="col-6 col-form-label"
+                  >Ball Control:</label
+                >
+                <div class="col-2">
+                  <input
+                    type="ballcontrol"
+                    class="form-control"
+                    id="inputBallcontrol"
+                    placeholder="score"
+                  />
+                </div>
+
+            </div>
+
+
+              <h5 class="card-title">Secondary card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="inputBallcontrol" class="col-8 col-form-label"
+              >Ball Control</label
+            >
+            <div class="col-2">
+              <input
+                type="ballcontrol"
+                class="form-control"
+                id="inputBallcontrol"
+                placeholder="ball control rating"
+              />
+            </div>
+            <label for="inputBallcontrol" class="col-8 col-form-label"
+              >Ball Control</label
+            >
+            <div class="col-2">
+              <input
+                type="ballcontrol"
+                class="form-control"
+                id="inputBallcontrol"
+                placeholder="ball control rating"
+              />
+            </div>
+            <label for="inputBallcontrol" class="col-8 col-form-label"
+              >Ball Control</label
+            >
+            <div class="col-2">
+              <input
+                type="ballcontrol"
+                class="form-control"
+                id="inputBallcontrol"
+                placeholder="ball control rating"
+              />
+            </div>
+            <label for="inputBallcontrol" class="col-8 col-form-label"
+              >Ball Control</label
+            >
+            <div class="col-2">
+              <input
+                type="ballcontrol"
+                class="form-control"
+                id="inputBallcontrol"
+                placeholder="ball control rating"
+              />
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-
-            <div class="col-sm-8" id="playerform">hello</div>
-            <div class="col-sm-4" id="playercards">goodbye</div>
-        </div>
-
+        <div class="col-sm-4" id="playercards">goodbye</div>
+      </div>
     </div>
-
-
-
-
-    
-</body>
+  </body>
 </html>
