@@ -29,7 +29,7 @@
 
     <div class="container">
       <div class="row d-flex justify-content-center">
-        <div class="btn-group" role="group" aria-label="Basic example" >
+        <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn choose">Add Player</button>
           <button type="button" class="btn choose">View Players</button>
         </div>
@@ -37,184 +37,153 @@
 
       <div class="row">
         <div class="col-sm-8" id="playerform">
-            
-             
+          <div class="card border-secondary mb-3">
+            <div class="card-header">NEW PLAYER</div>
+            <div class="card-body text-dark">
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="mb-3 row">
+                    <label for="inputName" class="col-auto col-form-label"
+                      >Name:</label
+                    >
+                    <div class="col-auto">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="playerName"
+                        placeholder="Player Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 col-form-label">
+                      <label for="skillscolumn" class="text-danger"
+                        >SKILLS</label
+                      >
+                    </div>
 
-                    <div class="card border-secondary mb-3">
+                    <div class="col-2 col-form-label">
+                      <label for="scorecolumn" class="text-danger"
+                        >SCORE (1-5)</label
+                      >
+                      <!-- <h7 class="text-danger"> SCORE (1-5) </h7> -->
+                    </div>
+                  </div>
 
-            
+                  <div class="mb-3 row">
+                    <label for="inputBallcontrol" class="col-6 col-form-label"
+                      >Ball Control:</label
+                    >
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputBallcontrol"
+                        maxlength="1"
+                        min="1"
+                        max="5"
+                        style="text-align: center; width: 45px"
+                      />
+                    </div>
+                  </div>
 
-                        <div class="card-header">NEW PLAYER</div>
-                        <div class="card-body text-dark">
+                  <div class="mb-3 row">
+                    <label for="inputPassing" class="col-6 col-form-label"
+                      >Passing:</label
+                    >
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputPassing"
+                        maxlength="1"
+                        min="1"
+                        max="5"
+                        style="text-align: center; width: 45px"
+                      />
+                    </div>
+                  </div>
 
-                            <div class="row">
+                  <div class="mb-3 row">
+                    <label for="inputShooting" class="col-6 col-form-label"
+                      >Shooting:</label
+                    >
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputShooting"
+                        maxlength="1"
+                        min="1"
+                        max="5"
+                        style="text-align: center; width: 45px"
+                      />
+                    </div>
+                  </div>
 
-                                <div class="col-sm-8">
-
-                                    <div class="mb-3 row">
-                                        <label for="inputName" class="col-auto col-form-label"
-                                          >Name:</label
-                                        >
-                                        <div class="col-auto">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="playerName"
-                                            placeholder="Player Name"
-                                            
-                                          />
-                                        </div>
-                                      </div>
-                                      <div class="row">
-                                        <div class="col-6 col-form-label">
-                        
-                                            <label for="skillscolumn" class="text-danger"
-                                            >SKILLS</label
-                                          >
-                                        
-                                        </div>
-                        
-                                        <div class="col-2 col-form-label">
-                        
-                                            <label for="scorecolumn" class="text-danger"
-                                            >SCORE (1-5)</label
-                                          >
-                                          <!-- <h7 class="text-danger"> SCORE (1-5) </h7> -->
-                                        </div>
-                                      </div>
-                        
-                                      <div class="mb-3 row">
-                                        <label for="inputBallcontrol" class="col-6 col-form-label"
-                                          >Ball Control:</label
-                                        >
-                                        <div class="col-2">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="inputBallcontrol"
-                                            
-                                            maxlength="1"
-                                            min="1" max="5" 
-                                            style="text-align: center; width: 45px;"
-                                          />
-                                        </div>
-                                      </div>
-                        
-                                      <div class="mb-3 row">
-                                        <label for="inputPassing" class="col-6 col-form-label"
-                                          >Passing:</label
-                                        >
-                                        <div class="col-2">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="inputPassing"
-                                            maxlength="1" 
-                                            min="1" max="5"
-                                            style="text-align: center; width: 45px;"
-                        
-                                          />
-                                        </div>
-                                      </div>
-                        
-                                      <div class="mb-3 row">
-                                        <label for="inputShooting" class="col-6 col-form-label"
-                                          >Shooting:</label
-                                        >
-                                        <div class="col-2">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="inputShooting"
-                                          
-                                            maxlength="1" 
-                                            min="1" max="5"
-                                            style="text-align: center; width: 45px;"
-                        
-                                          />
-                                        </div>
-                                      </div>
-                        
-                                      <div class="mb-3 row">
-                                        <label for="inputStamina" class="col-6 col-form-label"
-                                          >Stamina:</label
-                                        >
-                                        <div class="col-2">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="inputStamina"
-                                          
-                                            maxlength="1"
-                                            min="1" max="5" 
-                                            style="text-align: center; width: 45px;"
-                        
-                                          />
-                                        </div>
-                                      </div>
-                                      <div class="mb-3 row">
-                                        <label for="inputFieldawareness" class="col-6 col-form-label"
-                                          >Field Awareness:</label
-                                        >
-                                        <div class="col-2">
-                                          <input
-                                            type="text"
-                                            class="form-control"
-                                            id="inputFieldawareness"
-                                       
-                                            maxlength="1" 
-                                            min="1" max="5"
-                                            style="text-align: center; width: 45px;"
-                                          
-                        
-                                          />
-                                        </div>
-                                      </div>
-                        
-                                     
-    
-                                </div>
-                                <div class="col-sm-4">
-    
-                                    <h4>TOTAL SCORE</h4>
-                                    <h5>00</h5>
-
-                                </div>
-    
-    
-                            </div>
-                            <div class="row">
-                                <button type="button"class="btn " style="background-color: #000033; color: white;">save</button>
-                            </div>
-
-
-
-
-
-                     
-                        </div>
-                      </div>
-
-
-                
-
-
-
-            
-          
+                  <div class="mb-3 row">
+                    <label for="inputStamina" class="col-6 col-form-label"
+                      >Stamina:</label
+                    >
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputStamina"
+                        maxlength="1"
+                        min="1"
+                        max="5"
+                        style="text-align: center; width: 45px"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label
+                      for="inputFieldawareness"
+                      class="col-6 col-form-label"
+                      >Field Awareness:</label
+                    >
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputFieldawareness"
+                        maxlength="1"
+                        min="1"
+                        max="5"
+                        style="text-align: center; width: 45px"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <h4>TOTAL SCORE</h4>
+                  <h5>00</h5>
+                </div>
+              </div>
+              <div class="row">
+                <button
+                  type="button"
+                  class="btn"
+                  style="background-color: #000033; color: white"
+                  id="saveBtn"
+                >
+                  save
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="col-sm-4" id="playercards">
-            <div class="card">
-                <div class="card-header">
-                  PLAYER RATINGS
-                </div>
-                <div class="card-body">
-                  
-                  <p class="card-text">Click on player card to view score or update skills rating </p>
-                  
-                </div>
-              </div>
+          <div class="card">
+            <div class="card-header">PLAYER RATINGS</div>
+            <div class="card-body">
+              <p class="card-text">
+                Click on player card to view score or update skills rating
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
