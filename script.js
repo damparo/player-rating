@@ -7,6 +7,7 @@ const fieldAwareness = document.getElementById("inputFieldawareness");
 const saveBtn = document.getElementById("saveBtn");
 const playerScore = document.getElementById("score");
 const message1 = document.getElementById("message");
+const cardArea = document.getElementById("playerArea");
 
 // array for all cards information 
 let cardInfo = [];
@@ -73,6 +74,32 @@ saveBtn.addEventListener("click", function (event) {
 
     playerScore.innerHTML = overallScore;
   }
+
+  let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
+  console.log(getPlayerCardInfor);
+  for (let i = 0; i < getPlayerCardInfor.length; i++) {
+
+    console.log(getPlayerCardInfor[i]);
+    // let singlePlayerCard = document.createElement("div");
+    let singlePlayerName = document.createElement("h5");
+    singlePlayerName.innerHTML = getPlayerCardInfor[i].playerNom;
+
+      cardArea.appendChild(
+        // singlePlayerCard.setAttribute("class", "card")
+      singlePlayerName
+      );
+    
+
+
+
+
+  }
+
+
+
+
+
+
   }
  
 });
