@@ -8,6 +8,9 @@ const saveBtn = document.getElementById("saveBtn");
 const playerScore = document.getElementById("score");
 const message1 = document.getElementById("message");
 
+// array for all cards information 
+let cardInfo = [];
+
 // create function if input is left blank
 
 function displayError(message) {
@@ -45,7 +48,16 @@ saveBtn.addEventListener("click", function (event) {
     fieldAware: fieldAwareness.value,
   };
 
-  console.log(playerData);
+ 
+
+  cardInfo.push(playerData);
+
+  console.log(cardInfo);
+
+
+  localStorage.setItem("player", JSON.stringify(cardInfo));
+
+
 
   addScores();
   function addScores() {
