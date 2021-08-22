@@ -5,10 +5,34 @@ const shooting = document.getElementById("inputShooting");
 const stamina = document.getElementById("inputStamina");
 const fieldAwareness = document.getElementById("inputFieldawareness");
 const saveBtn = document.getElementById("saveBtn");
+const playerScore = document.getElementById("score");
+const message1 = document.getElementById("message")
+
+// create function if input is left blank
+
+
+function displayError (message) {
+
+  message1.textContent = message;
+
+
+}
+
+
+
+
+
 
 saveBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
+
+
+
+
+if (playerName.value === "" || ballControl.value === "" || passing.value === "" || shooting.value  === "" || stamina.value === "" || fieldAwareness.value === ""){
+  displayError("Please fill out all fields");
+};
 
 
 
@@ -35,9 +59,17 @@ saveBtn.addEventListener("click", function (event) {
     console.log(overallScore);
 
 
+    playerScore.innerHTML = overallScore;
+
+
+
+
 
   }
  
+
+
+
 //   console.log(addScores());
 
 
