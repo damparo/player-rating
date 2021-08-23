@@ -40,6 +40,7 @@ saveBtn.addEventListener("click", function (event) {
     displayError("Please fill out all fields");
   }else { 
   displayError("everthingelse")
+
   const playerData = {
     playerNom: playerName.value.trim(),
     ballCon: ballControl.value,
@@ -50,19 +51,10 @@ saveBtn.addEventListener("click", function (event) {
   };
 
  
-
-  cardInfo.push(playerData);
-
-  console.log(cardInfo);
-
-
-  localStorage.setItem("player", JSON.stringify(cardInfo));
-
-
-
+  let overallScore;
   addScores();
   function addScores() {
-    const overallScore =
+    overallScore =
       parseInt(ballControl.value) +
       parseInt(passing.value) +
       parseInt(shooting.value) +
@@ -75,13 +67,31 @@ saveBtn.addEventListener("click", function (event) {
     playerScore.innerHTML = overallScore;
   }
 
+  playerData.individualScore = overallScore;
+
+  console.log(playerData)
+
+
+
+  cardInfo.push(playerData);
+
+  console.log(cardInfo);
+
+
+  localStorage.setItem("player", JSON.stringify(cardInfo));
+
+
+
+
   let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
   console.log(getPlayerCardInfor);
   for (let i = 0; i < getPlayerCardInfor.length; i++) {
 
     console.log(getPlayerCardInfor[i]);
     // let singlePlayerCard = document.createElement("div");
-    let singlePlayerName = document.createElement("h5");
+    const singlePlayerName = document.createElement("div");
+    singlePlayerName.setAttribute("class", "card");
+
     singlePlayerName.innerHTML = getPlayerCardInfor[i].playerNom;
 
       cardArea.appendChild(
