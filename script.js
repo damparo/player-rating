@@ -81,15 +81,16 @@ saveBtn.addEventListener("click", function (event) {
   localStorage.setItem("player", JSON.stringify(cardInfo));
 
 
-
-
   let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
   console.log(getPlayerCardInfor);
+
+  const singlePlayerName = document.createElement("div");
+
   for (let i = 0; i < getPlayerCardInfor.length; i++) {
 
     console.log(getPlayerCardInfor[i]);
     // let singlePlayerCard = document.createElement("div");
-    const singlePlayerName = document.createElement("div");
+    singlePlayerName.innerHTML = "";
     singlePlayerName.setAttribute("class", "card");
 
     singlePlayerName.innerHTML = getPlayerCardInfor[i].playerNom;
@@ -98,9 +99,6 @@ saveBtn.addEventListener("click", function (event) {
         // singlePlayerCard.setAttribute("class", "card")
       singlePlayerName
       );
-    
-
-
 
 
   }
