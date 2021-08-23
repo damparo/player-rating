@@ -84,20 +84,37 @@ saveBtn.addEventListener("click", function (event) {
   let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
   console.log(getPlayerCardInfor);
 
-  const singlePlayerName = document.createElement("div");
+  const singlePlayerCard = document.createElement("div");
+  singlePlayerCard.setAttribute("class", "card");
 
+  
+  const singleRowCard = document.createElement("div");
+  singleRowCard.setAttribute("class", "row");
+
+
+  const singlePlayerNameCol =  document.createElement("div");
+  singlePlayerNameCol.setAttribute("class", "col");
+
+  const singlePlayerScoreCol =  document.createElement("div");
+  singlePlayerScoreCol.setAttribute("class", "col");
+
+  singlePlayerCard.appendChild(singleRowCard);
   for (let i = 0; i < getPlayerCardInfor.length; i++) {
 
     console.log(getPlayerCardInfor[i]);
     // let singlePlayerCard = document.createElement("div");
-    singlePlayerName.innerHTML = "";
-    singlePlayerName.setAttribute("class", "card");
+    singlePlayerNameCol.innerHTML = "";
+    singlePlayerScoreCol.innerHTML = "";
 
-    singlePlayerName.innerHTML = getPlayerCardInfor[i].playerNom;
+    singlePlayerNameCol.innerHTML = getPlayerCardInfor[i].playerNom;
+    singlePlayerScoreCol.innerHTML = getPlayerCardInfor[i].individualScore;
 
+    singleRowCard.appendChild(singlePlayerNameCol);
+    singleRowCard.appendChild(singlePlayerScoreCol);
+    singlePlayerCard.appendChild(singleRowCard);
       cardArea.appendChild(
         // singlePlayerCard.setAttribute("class", "card")
-      singlePlayerName
+      singlePlayerCard
       );
 
 
