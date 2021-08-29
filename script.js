@@ -112,6 +112,7 @@ saveBtn.addEventListener("click", function (event) {
     singleRowCard.appendChild(singlePlayerNameCol);
     singleRowCard.appendChild(singlePlayerScoreCol);
     singlePlayerCard.appendChild(singleRowCard);
+    singlePlayerCard.classList.add("grab-card");
       cardArea.appendChild(
         // singlePlayerCard.setAttribute("class", "card")
       singlePlayerCard
