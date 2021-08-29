@@ -9,14 +9,13 @@ const playerScore = document.getElementById("score");
 const message1 = document.getElementById("message");
 const cardArea = document.getElementById("playerArea");
 
-// array for all cards information 
+// array for all cards information
 let cardInfo = [];
 
 // create function if input is left blank
 
 function displayError(message) {
-
-  switch (message){
+  switch (message) {
     case "Please fill out all fields":
       message1.textContent = message;
       break;
@@ -38,96 +37,118 @@ saveBtn.addEventListener("click", function (event) {
     fieldAwareness.value === ""
   ) {
     displayError("Please fill out all fields");
-  }else { 
-  displayError("everthingelse")
+  } else {
+    displayError("everthingelse");
 
-  const playerData = {
-    playerNom: playerName.value.trim(),
-    ballCon: ballControl.value,
-    pass: passing.value,
-    shoot: shooting.value,
-    stam: stamina.value,
-    fieldAware: fieldAwareness.value,
-  };
+    const playerData = {
+      playerNom: playerName.value.trim(),
+      ballCon: ballControl.value,
+      pass: passing.value,
+      shoot: shooting.value,
+      stam: stamina.value,
+      fieldAware: fieldAwareness.value,
+    };
 
- 
-  let overallScore;
-  addScores();
-  function addScores() {
-    overallScore =
-      parseInt(ballControl.value) +
-      parseInt(passing.value) +
-      parseInt(shooting.value) +
-      parseInt(stamina.value) +
-      parseInt(fieldAwareness.value);
-    
+    let overallScore;
+    addScores();
+    function addScores() {
+      overallScore =
+        parseInt(ballControl.value) +
+        parseInt(passing.value) +
+        parseInt(shooting.value) +
+        parseInt(stamina.value) +
+        parseInt(fieldAwareness.value);
 
-    console.log(overallScore);
+      console.log(overallScore);
 
-    playerScore.innerHTML = overallScore;
-  }
+      playerScore.innerHTML = overallScore;
+    }
 
-  playerData.individualScore = overallScore;
+    playerData.individualScore = overallScore;
 
-  console.log(playerData)
+    console.log(playerData);
 
+    cardInfo.push(playerData);
 
+    console.log(cardInfo);
 
-  cardInfo.push(playerData);
+    localStorage.setItem("player", JSON.stringify(cardInfo));
 
-  console.log(cardInfo);
+    let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
+    console.log(getPlayerCardInfor);
 
+    const singlePlayerCard = document.createElement("div");
+    singlePlayerCard.setAttribute("class", "card");
 
-  localStorage.setItem("player", JSON.stringify(cardInfo));
+    const singleRowCard = document.createElement("div");
+    singleRowCard.setAttribute("class", "row");
 
+    const singlePlayerNameCol = document.createElement("div");
+    singlePlayerNameCol.setAttribute("class", "col");
 
-  let getPlayerCardInfor = JSON.parse(localStorage.getItem("player")) || [];
-  console.log(getPlayerCardInfor);
+    const singlePlayerScoreCol = document.createElement("div");
+    singlePlayerScoreCol.setAttribute("class", "col");
 
-  const singlePlayerCard = document.createElement("div");
-  singlePlayerCard.setAttribute("class", "card");
-
-  
-  const singleRowCard = document.createElement("div");
-  singleRowCard.setAttribute("class", "row");
-
-
-  const singlePlayerNameCol =  document.createElement("div");
-  singlePlayerNameCol.setAttribute("class", "col");
-
-  const singlePlayerScoreCol =  document.createElement("div");
-  singlePlayerScoreCol.setAttribute("class", "col");
-
-  singlePlayerCard.appendChild(singleRowCard);
-  for (let i = 0; i < getPlayerCardInfor.length; i++) {
-
-    console.log(getPlayerCardInfor[i]);
-    // let singlePlayerCard = document.createElement("div");
-    singlePlayerNameCol.innerHTML = "";
-    singlePlayerScoreCol.innerHTML = "";
-
-    singlePlayerNameCol.innerHTML = getPlayerCardInfor[i].playerNom;
-    singlePlayerScoreCol.innerHTML = getPlayerCardInfor[i].individualScore;
-
-    singleRowCard.appendChild(singlePlayerNameCol);
-    singleRowCard.appendChild(singlePlayerScoreCol);
     singlePlayerCard.appendChild(singleRowCard);
-    singlePlayerCard.classList.add("grab-card");
-    singlePlayerCard.setAttribute("data-player", getPlayerCardInfor[i].playerNom);
-      cardArea.appendChild(
-        // singlePlayerCard.setAttribute("class", "card")
-      singlePlayerCard
+    for (let i = 0; i < getPlayerCardInfor.length; i++) {
+      console.log(getPlayerCardInfor[i]);
+      // let singlePlayerCard = document.createElement("div");
+      singlePlayerNameCol.innerHTML = "";
+      singlePlayerScoreCol.innerHTML = "";
+
+      singlePlayerNameCol.innerHTML = getPlayerCardInfor[i].playerNom;
+      singlePlayerScoreCol.innerHTML = getPlayerCardInfor[i].individualScore;
+
+      singleRowCard.appendChild(singlePlayerNameCol);
+      singleRowCard.appendChild(singlePlayerScoreCol);
+      singlePlayerCard.appendChild(singleRowCard);
+      singlePlayerCard.classList.add("grab-card");
+      singlePlayerCard.setAttribute(
+        "data-player",
+        getPlayerCardInfor[i].playerNom
       );
 
+      singlePlayerCard.addEventListener("click", function (event) {
+        event.preventDefault();
+        let reviewPlayer = this.getAttribute("data-player");
+        console.log(reviewPlayer);
+        reload(reviewPlayer, getPlayerCardInfor);
 
+        function reload (reviewPlayer, getPlayerCardInfor){
+          console.log("working??");
+          playerName.value = "";
+          ballControl.value = "";
+          passing.value = "";
+          shooting.value = "";
+          stamina.value = "";
+          fieldAwareness.value = "";
+        
+          if ( reviewPlayer === getPlayerCardInfor[i].playerNom){
+        
+              playerName.value === getPlayerCardInfor.playerNom,
+              ballControl.value === getPlayerCardInfor.ballCon,
+              passing.value === getPlayerCardInfor.pass,
+              shooting.value === getPlayerCardInfor.shoot,
+              stamina.value === getPlayerCardInfor.stam,
+              fieldAwareness.value === getPlayerCardInfor.fieldAware
+        
+            }
+        
+        };
+
+
+
+
+
+      });
+
+      cardArea.appendChild(singlePlayerCard);
+    }
   }
-
-
-
-
-
-
-  }
- 
 });
+
+
+// this function will refill player card after player rating card is clicked
+
+
 
