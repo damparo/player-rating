@@ -112,10 +112,14 @@ saveBtn.addEventListener("click", function (event) {
         event.preventDefault();
         let reviewPlayer = this.getAttribute("data-player");
         console.log(reviewPlayer);
-        reload(reviewPlayer, getPlayerCardInfor);
+        
+        // run function that clears the general player card and refills it with selected player
+        reload(reviewPlayer);
 
-        function reload (reviewPlayer, getPlayerCardInfor){
+        function reload (reviewPlayer){
           console.log("working??");
+          console.log(getPlayerCardInfor[i])
+
           playerName.value = "";
           ballControl.value = "";
           passing.value = "";
@@ -124,15 +128,17 @@ saveBtn.addEventListener("click", function (event) {
           fieldAwareness.value = "";
         
           if ( reviewPlayer === getPlayerCardInfor[i].playerNom){
+
+            console.log(getPlayerCardInfor[i].playerNom)
         
-              playerName.value === getPlayerCardInfor.playerNom,
-              ballControl.value === getPlayerCardInfor.ballCon,
-              passing.value === getPlayerCardInfor.pass,
-              shooting.value === getPlayerCardInfor.shoot,
-              stamina.value === getPlayerCardInfor.stam,
-              fieldAwareness.value === getPlayerCardInfor.fieldAware
+              playerName.value = getPlayerCardInfor[i].playerNom,
+              ballControl.value = getPlayerCardInfor[i].ballCon,
+              passing.value = getPlayerCardInfor[i].pass,
+              shooting.value = getPlayerCardInfor[i].shoot,
+              stamina.value = getPlayerCardInfor[i].stam,
+              fieldAwareness.value = getPlayerCardInfor[i].fieldAware
         
-            }
+          }
         
         };
 
