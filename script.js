@@ -14,7 +14,7 @@ let cardInfo = [];
 
 // create function if input is left blank
 
-function displayError(message) {
+const displayError = (message) => {
   switch (message) {
     case "Please fill out all fields":
       message1.textContent = message;
@@ -22,8 +22,8 @@ function displayError(message) {
     case "everthingelse":
       message1.textContent = "";
       break;
-  }
-}
+  }}
+
 
 saveBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -50,8 +50,8 @@ saveBtn.addEventListener("click", function (event) {
     };
 
     let overallScore;
-    addScores();
-    function addScores() {
+    
+    const addScores = () => {
       overallScore =
         parseInt(ballControl.value) +
         parseInt(passing.value) +
@@ -63,6 +63,8 @@ saveBtn.addEventListener("click", function (event) {
 
       playerScore.innerHTML = overallScore;
     }
+
+    addScores();
 
     playerData.individualScore = overallScore;
 
@@ -114,9 +116,9 @@ saveBtn.addEventListener("click", function (event) {
         console.log(reviewPlayer);
         
         // run function that clears the general player card and refills it with selected player
-        reload(reviewPlayer);
+        
 
-        function reload (reviewPlayer){
+        const reload =  reviewPlayer => {
           console.log("working??");
           console.log(getPlayerCardInfor[i])
 
@@ -142,7 +144,7 @@ saveBtn.addEventListener("click", function (event) {
         
         };
 
-
+        reload(reviewPlayer);
 
 
 
